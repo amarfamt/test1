@@ -1,19 +1,13 @@
 pipeline{
     //Directives
     agent any
-    tools {
-        maven 'maven'
-    }
+   node {
+  stage('SCM') {
+    git 'https://github.com/amarfamt/test1.git'
+  }
 
     stages {
-        // Specify various stage with in stages
-
-        // stage 1. Build
-        stage ('Build'){
-            steps {
-                sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
-            }
-        }
+      
 
         // Stage2 : Testing
         stage ('Test'){
@@ -21,7 +15,7 @@ pipeline{
                 echo ' testing......'
 
             }
-        }
+        
 
         // Stage3 : Publish the source code to Sonarqube
         stage ('Sonarqube Analysis'){

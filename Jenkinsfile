@@ -1,6 +1,6 @@
 node {
   stage('SCM') {
-    git 'https://github.com/foo/foo.git'
+    git 'https://github.com/amarfamt/test1.git'
   }
   stage('sonarqube') {
     

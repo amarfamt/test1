@@ -1,1 +1,3 @@
-print("ok")
+def test1():
+  ++i
+  

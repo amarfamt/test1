@@ -1,9 +1,5 @@
+import tempfile
 
-from flask import request
-import os
+filename = tempfile.mktemp() # Noncompliant
+tmp_file = open(filename, "w+")
 
-@app.route('/ping')
-def ping():
-    address = request.args.get("address")
-    cmd = "ping -c 1 %s" % address
-    os.popen(cmd) # Noncompliant

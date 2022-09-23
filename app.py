@@ -1,2 +1,3 @@
 def test1():
-  pass
+  ++i
+  print(i)
